@@ -1,0 +1,79 @@
+
+<div class="container" style="margin-top: 90px;margin-left: 395px;" ng-if="!login.loggedIn">
+			<form id="search-form" ng-submit="login.doLogin()" method="post" role="form">
+			Username:<input type="text" name="username" style="width: 220px;" class="form-control" id="username" ng-model="login.loginData.username">
+			Password:<input type="Password" style="width: 220px;" name="password" class="form-control" id="password" ng-model="login.loginData.password">
+					<input type="submit" style="margin-top: 10px;margin-left: 70px;" class="btn btn-primary" name="submit" id="submit" value="Login">
+</form>
+</div>
+
+
+<div ng-if="login.loggedIn">
+<ul style="list-style: none;" class="pull-right"><li><a href="#" ng-click="login.doLogout()" >Logout</a><br>Hello <a href="#">{{login.user.username}}</a></li></ul><br>
+<div ng-controller="mainCtrl as main">
+<form id="search-form" ng-submit="main.doSubmit()" method="post" role="form">
+Enter User Id:<input type="search" name="search" id="search" style="width: 220px;" class="form-control" ng-model="main.searchData.search">
+<input type="submit" style="margin-top: 10px;" name="submit" class="btn btn-primary" id="submit">
+</form>
+
+<div ng-if=main.data style="margin-top: 30px;">
+	
+ <table style="margin-top: 30px;">
+  <tr>
+  <th ng-repeat="(x, y) in main.data[0][0]">{{x}}</th>
+   </tr>
+   <tr><td ng-repeat="(x, y) in main.data[0][0]">{{y}}</td> </tr>
+   <tr>
+  <th style="margin-top: 300px;" ng-repeat="(x, y) in main.data[1]">{{x}}</th>
+   </tr>
+   <tr><td ng-repeat="(x, y) in main.data[1]">{{y}}</td> </tr>
+   
+
+</table> 
+
+
+<table style="margin-top: 30px;">
+	<tr >
+  	<th ng-repeat="x in main.data[2]">{{x.os_parameter}}</th>
+   	</tr>
+   	<tr >
+  	<td ng-repeat="x in main.data[2]">{{x.career_os_sd_match_stanine}}</td>
+   	</tr>
+</table>
+
+<table style="margin-top: 30px;">
+	<tr >
+  	<th ng-repeat="x in main.data[3]">{{x.interests}}</th>
+   	</tr>
+   	<tr >
+  	<td ng-repeat="x in main.data[3]">{{x.stanine}}</td>
+   	</tr>
+</table>
+
+
+<table style="margin-top: 30px;">
+	<tr >
+  	<th ng-repeat="x in main.data[4]">{{x.domain}}</th>
+   	</tr>
+   	<tr >
+  	<td ng-repeat="x in main.data[4]">{{x.match}}</td>
+   	</tr>
+</table>
+
+<table style="margin-top: 30px;">
+
+
+	<tr>
+  	<td ng-repeat="x in main.data[5]">{{"RANK"}} {{$index+1}}</td>
+   	</tr>
+	<tr >
+  	<td ng-repeat="x in main.data[5]">{{x.domain}}</td>
+   	</tr>
+   	<tr >
+  	<td ng-repeat="x in main.data[5]">{{x.match}}</td>
+   	</tr>
+</table>
+
+</div>
+</div>
+</div>
