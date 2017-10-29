@@ -64,6 +64,7 @@ module.exports=function(app,express,connection){
         }
       }
     });
+    connection.end();
   });
 
 
@@ -134,59 +135,9 @@ connection.query('SELECT users.uid,users.first_name,users.last_name,users.email,
     })
   
 
-
+  connection.end();
 
   });
 
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	return api
+return api
 }
