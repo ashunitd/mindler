@@ -7,10 +7,10 @@ var app=express();
 var http=require('http').Server(app);
 
 var connection = mysql.createConnection({
-					  host     : 'localhost',
-					  user     : 'root',
-					  password : '',
-					  database : 'mindler',
+					  host     : 'us-cdbr-iron-east-05.cleardb.net',
+					  user     : 'b34a8e07148a7d',
+					  password : 'b9c7775c',
+					  database : 'heroku_02dc774aa58a4ec',
 					  multipleStatements: true
 					});
  
