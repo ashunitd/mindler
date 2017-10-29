@@ -9,7 +9,7 @@ angular.module('loginController',[])
 	Auth.getUser()
 			.then(function(data){
 				vm.user=data.data;
-				console.log(vm.user);
+				
 				
 				
 				
@@ -26,7 +26,7 @@ angular.module('loginController',[])
 
 		Auth.login(vm.loginData.username,vm.loginData.password)
 			.success(function(data){
-				vm.error=data.message;
+				vm.message=data.message;
 				
 				vm.processing=false;
 				Auth.getUser()

@@ -37,7 +37,7 @@ module.exports=function(app,express,connection){
             error:error
             })
       }else{
-        console.log(results[0]);
+        
         if(results.length >0){
             var token=createToken(results);
             var username=results[0].username;
@@ -51,7 +51,7 @@ module.exports=function(app,express,connection){
             }else{
                 res.json({
                   status:false,
-                  message:"Email and password does not match"
+                  message:"Username and password does not match"
                  });
             }
          
@@ -59,7 +59,7 @@ module.exports=function(app,express,connection){
         else{
           res.json({
               status:false,    
-            message:"Email does not exits"
+            message:"Invalid Username or Password"
           });
         }
       }
