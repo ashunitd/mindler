@@ -1,3 +1,10 @@
+<div ng-if="login.error">
+<div class="alert alert-danger">
+  <strong>{{login.error}}</strong>
+</div>
+</div>
+
+
 
 <div class="container" style="margin-top: 90px;margin-left: 395px;" ng-if="!login.loggedIn">
 			<form id="search-form" ng-submit="login.doLogin()" method="post" role="form">

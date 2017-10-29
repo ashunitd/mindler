@@ -27,7 +27,7 @@ angular.module('loginController',[])
 		Auth.login(vm.loginData.username,vm.loginData.password)
 			.success(function(data){
 				vm.error=data.message;
-				console.log(vm.error);
+				
 				vm.processing=false;
 				Auth.getUser()
 					.then(function(data){
