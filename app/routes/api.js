@@ -64,12 +64,12 @@ module.exports=function(app,express,connection){
         }
       }
     });
-    connection.end();
+    
   });
 
 
   api.use(function(req,res,next){
-   console.log('ssomeone trying to connect');
+   console.log('someone trying to connect');
    var token = req.body.token || req.param.token || req.headers['x-access-token'];
     
     
