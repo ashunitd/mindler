@@ -6,45 +6,45 @@ var morgan=require('morgan');
 var app=express();
 var http=require('http').Server(app);
 
-// var connection = mysql.createConnection({
-// 					  host     : 'us-cdbr-iron-east-05.cleardb.net',
-// 					  user     : 'b34a8e07148a7d',
-// 					  password : 'b9c7775c',
-// 					  database : 'heroku_02dc774aa58a4ec',
-// 					  multipleStatements: true
-// 					});
+var connection = mysql.createConnection({
+					  host     : 'us-cdbr-iron-east-05.cleardb.net',
+					  user     : 'b34a8e07148a7d',
+					  password : 'b9c7775c',
+					  database : 'heroku_02dc774aa58a4ec',
+					  multipleStatements: true
+					});
  
-// connection.connect(function(err) {
-//   if (err) throw err;
-//   console.log("Connected to database");
-// });
+connection.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected to database");
+});
 
 
-function handleDisconnect() {
-  connection = mysql.createConnection({host: '127.0.0.1',
-					  user     : 'root',
-					  password : '',
-					  database : 'mindler',
-					  multipleStatements: true}); 
+// function handleDisconnect() {
+//   connection = mysql.createConnection({host: '127.0.0.1',
+// 					  user     : 'root',
+// 					  password : '',
+// 					  database : 'mindler',
+// 					  multipleStatements: true}); 
                                                   
 
-  connection.connect(function(err) {              
-    if(err) {                                     
-     console.log('error when connecting to db:', err);
-      setTimeout(handleDisconnect, 2000); 
-    }                                     
-  });                                     
-  connection.on('error', function(err) {
-    console.log('db error', err);
-    if(err.code === 'PROTOCOL_CONNECTION_LOST') { 
-      handleDisconnect();                         
-    } else {                                      
-      throw err;                                  
-    }
-  });
-}
+//   connection.connect(function(err) {              
+//     if(err) {                                     
+//      console.log('error when connecting to db:', err);
+//       setTimeout(handleDisconnect, 2000); 
+//     }                                     
+//   });                                     
+//   connection.on('error', function(err) {
+//     console.log('db error', err);
+//     if(err.code === 'PROTOCOL_CONNECTION_LOST') { 
+//       handleDisconnect();                         
+//     } else {                                      
+//       throw err;                                  
+//     }
+//   });
+// }
 
-handleDisconnect();
+// handleDisconnect();
 
 
 
