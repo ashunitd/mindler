@@ -13,7 +13,7 @@ function createToken(results){
 		expiresIn:1440
 	});
 
-	return token;
+	return tokenp;
 
 }
 
