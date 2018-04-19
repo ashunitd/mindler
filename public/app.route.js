@@ -17,3 +17,5 @@ angular.module('appRoutes',['ngRoute'])
 		$locationProvider.html5Mode(true);
 
 })
+
+	one line added
