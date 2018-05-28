@@ -1,4 +1,4 @@
-var config=require('./config');
+hdvar config=require('./config');
 var mysql=require('mysql');
 var express=require('express');
 var bodyParser=require('body-parser');
