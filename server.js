@@ -19,15 +19,6 @@ connection.connect(function(err) {
   console.log("Connected to database");
 });
 
-
-added First line
-added second line
-
-
-
-
-
-
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
